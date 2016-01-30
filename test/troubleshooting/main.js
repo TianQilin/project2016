@@ -8,21 +8,9 @@ function start(route, handle){
 		route(handle, pathname, response, request);
     }
     
-   app = http.createServer(onRequest).listen(8888);
+    app = http.createServer(onRequest).listen(8888);
     console.log("Server has started");
 }
-//iofile
-var io = socketio(app);
 
-io.on('connection', function (socket) {
-   
-    socket.on('chat', function (data) {
-        console.log(data);
-
-        io.emit('sendmsg', data); 
-    });
-});
-
-console.log("Server is running at http://localhost:8888")
 
 exports.start = start;

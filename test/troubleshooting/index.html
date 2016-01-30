@@ -29,6 +29,7 @@
 </html>
 
 <script>
+    //original code to send message
     var socket = io.connect();
     $(function() {
         $('#send').on('click', function() {
@@ -37,10 +38,25 @@
             $('#m').val('');
         });
     });
+   //receive name from server side
+    // $(function() {
+    //     socket.on('sendname', function(namemsg){
+    //        $('#messages').append($('<li>').text(namemsg.namemsg)); 
+    //     });
+    // });
+    
+    //original code
+   // $(function() {
+   
+   //   socket.on('sendmsg', function(msg) {
+   //       $('#messages').append($('<li>').text(msg.msg));
+   //   });
+   // });
+
+
     $(function() {
-       
-        socket.on('sendmsg', function(msg) {
-            $('#messages').append($('<li>').text(msg.msg));
+        socket.on('sendname','sendmsg', function(msg,namemsg) {
+         $('#messages').append($('<li>').text(namemsg.namemsg,msg.msg));
         });
     });
 </script>
