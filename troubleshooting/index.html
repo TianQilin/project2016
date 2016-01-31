@@ -29,7 +29,10 @@
 </html>
 
 <script>
+<<<<<<< HEAD
     //original code to send message
+=======
+>>>>>>> 2b6f1e119fff6951dec73bd4011967c133c45908
     var socket = io.connect();
     $(function() {
         $('#send').on('click', function() {
@@ -38,6 +41,7 @@
             $('#m').val('');
         });
     });
+<<<<<<< HEAD
    //receive name from server side
     // $(function() {
     //     socket.on('sendname', function(namemsg){
@@ -57,6 +61,12 @@
     $(function() {
         socket.on('sendname','sendmsg', function(msg,namemsg) {
          $('#messages').append($('<li>').text(namemsg.namemsg,msg.msg));
+=======
+    $(function() {
+       
+        socket.on('sendmsg', function(msg) {
+            $('#messages').append($('<li>').text(msg.msg));
+>>>>>>> 2b6f1e119fff6951dec73bd4011967c133c45908
         });
     });
 </script>

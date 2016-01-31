@@ -43,6 +43,23 @@ function mainFile(response){
     })
 }
 
+<<<<<<< HEAD
+=======
+//io file
+
+// var io = socketio(app);
+
+// io.on('connection', function (socket) {
+   
+//     socket.on('chat', function (data) {
+//         console.log(data);
+
+//         io.emit('sendmsg', data); 
+//     });
+// });
+
+// console.log("Server is running at http://localhost:8888")
+>>>>>>> 2b6f1e119fff6951dec73bd4011967c133c45908
 
 
 exports.start = start;
